@@ -92,7 +92,6 @@ def doMixScape2(adata, filterNone=True, minNums = 30, shuffle=True, filterCom = 
     return adata
 
 
-###  探索，目前没有跑mixscape的数据集，要么没有CTRL，要么是敲除enhancer, 或者是drug的扰动，或者是ATAC数据
 def doTest1():
     dat = pd.read_csv('/home/wzt/project/HC-CrisprScreen/poolSC_data/info.tsv', sep='\t', header=None)
     for tech, PRJ, i in zip(dat[1], dat[6], dat[3]):
