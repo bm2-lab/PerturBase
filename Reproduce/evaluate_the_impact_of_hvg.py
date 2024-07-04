@@ -32,7 +32,7 @@ def cal_result(dirName):
             sc.pp.highly_variable_genes(adata3, subset=True, n_top_genes=4000)
             sc.tl.rank_genes_groups(adata3, 'gene', groups=[pert], reference='CTRL')
             for pvalue, geneName, logfoldchanges in zip(adata3.uns['rank_genes_groups']['pvals_adj'], adata3.uns['rank_genes_groups']['names'],  adata3.uns['rank_genes_groups']['logfoldchanges']):
-                if pvalue[0] <= 0.01 and abs(logfoldchanges[0]) >=1:
+                if pvalue[0] <= 0.05 and abs(logfoldchanges[0]) >=1:
                     mylist.append(geneName[0])
             tmp = [i for i in mylist if i not in all_hvgs]
             if len(mylist) !=0:
