@@ -45,14 +45,14 @@ def cal_result(dirName):
 def analysis1():
     mylist = []
     dat1 = pd.read_excel('/home/wzt/project/HC-CrisprScreen/poolSC_data/Sheet10_modif.xlsx')
-    dat1 = dat1[((dat1['QC'] == 'Pass') & (dat1['Modality'] !='ATAC')  & (dat1['Perturbation Type'] == 'Genetic'))]
+    dat1 = dat1[((dat1['QC'] == 'Pass') & (dat1['Modality'] !='ATAC'))]
     dat1.sort_values('Filter_PerturbationNums', ascending=True, inplace=True)
     for dirName in tqdm(dat1['Datapath']):
         os.chdir(dirName)
         if os.path.isfile('missingDEG_ratio.tsv'):
             dat = pd.read_csv('missingDEG_ratio.tsv', sep='\t')
             dat['PertNums']= dat.shape[0]
-            if dat.shape[0] >=10000:continue
+            if dat.shape[0] >=1500:continue
             mylist.append(dat)
     datAll = pd.concat(mylist)
 
