@@ -256,11 +256,6 @@ A549  K562   MCF7
 '''
 
 
-### 虽然有数据集，但是过滤之后数据很少
-#### 在特定的数据集上进行试验
-specific_dataset = ''
-specific_dataset = '/home/wzt/project/HC-CrisprScreen/poolSC_data/01Perturb-seq/PRJNA831566/K562_GW'
-
 mtpercent = 10
 if __name__ == '__main__':
     print ('hello, world')
