@@ -24,3 +24,8 @@ This manuscript [reProduce_the_result_of_Mixscape.py](Reproduce/reProduce_the_re
 ### calDEG
 This folder [calDEG](calDEG) contains the code for calculating the differentially expressed genes with the fives softwares。
 
+## Citation
+Zhiting Wei, Duanmiao Si, Qi Liu et al. *PerturBase: a comprehensive database for single-cell perturbation data analysis and visualization*, 2024.
+## Contacts
+bm2-lab@tongji.edu.cn
+1810546@tongji.edu.cn
