@@ -52,7 +52,6 @@ def analysis1():
         if os.path.isfile('missingDEG_ratio.tsv'):
             dat = pd.read_csv('missingDEG_ratio.tsv', sep='\t')
             dat['PertNums']= dat.shape[0]
-            if dat.shape[0] >=1500:continue
             mylist.append(dat)
     datAll = pd.concat(mylist)
 
