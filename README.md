@@ -5,3 +5,6 @@ We present PerturBase—the first and most comprehensive database designed for t
 
 
 
+
+### DataProcessing_RNAseq
+This folder [DataProcessing_RNAseq](DataProcessing_RNAseq) contains the code for preprocessing and denoising the raw data.
