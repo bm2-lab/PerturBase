@@ -806,7 +806,7 @@ if __name__ == '__main__':
     #f_runScanpy1()  ### wilcoxon
     #f_runGSFA()
     
-    #f_getDEG1()    ### 产生deg_result.tsv文件，方便展示
+    #f_getDEG1()    ### 产生deg_result.tsv文件
     #f_getDEG()     ### 获得差异基因pkl文件
     
     ####f_degBarplot()  ### 差异基因柱状图
