@@ -10,10 +10,13 @@ We present PerturBase—the first and most comprehensive database designed for t
 This folder [DataProcessing_RNAseq](DataProcessing_RNAseq) contains the code for preprocessing and denoising the raw RNAseq data.
 
 ### DataProcessing_ATACseq
-This folder [DataProcessing_ATACseq](DataProcessing_ATACseq) contains the code for preprocessing and denoising the raw ATAC data.
+This folder [DataProcessing_ATACseq](DataProcessing_ATACseq) contains the code for preprocessing and denoising the raw ATAC data including Fragment tsv file and Peak Count matrix h5ad file.
 
 ### E-distance
 This folder [E-distance](E-distance) contains the code for calculating the distance between the perturb group and control (non-perturbed group)
+
+### Enrichment
+This folder [Enrichment](Enrichment) contains the code for GO and KEGG enrichment and visualization.
 
 ### Plot
 This folder [Plot](Plot) contains the basic plot function.
