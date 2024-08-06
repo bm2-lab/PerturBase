@@ -45,6 +45,7 @@ def PRJNA797432():
 '''
 Antigen-driven EGR2 expression is required for exhausted CD8+ T cell stability and maintenance
 Knock out
+first dataset
 '''
 def PRJNA556195():
     os.chdir('/NFS_home/NFS_home_2/wzt/project/HC-CrisprScreen/poolSC_data/8ECCITE-seq/PRJNA556195/EGR2_KnockOut')
@@ -57,7 +58,7 @@ def PRJNA556195():
 Multiplexed detection of proteins, transcriptomes, clonotypes and CRISPR perturbations in single cells
 '''
 
-### 第二篇数据
+### second dataset
 def PRJNA521522():
     os.chdir('/NFS_home/NFS_home_2/wzt/project/HC-CrisprScreen/poolSC_data/8ECCITE-seq/PRJNA521522/K')
     RNA= pd.read_csv('GSM3596090_K-cDNA.txt', sep=' ', index_col=0)
@@ -86,7 +87,7 @@ def PRJNA521522():
 
 
 '''
-第三篇 
+third dataset 
 '''
 def PRJNA641353():
     import pertpy as pt #type: ignore
