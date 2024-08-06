@@ -26,13 +26,8 @@ def fun1(adata, isWrite = True):
     #print (len(tmp))
 
 '''
-数据库的内容  展示敲除单个基因的表达谱。
-scanpy读取10_mtx有点复杂，首先，如果是gz文件，需要features.gz文件，提供genes.gz文件不符合要求，
-但因为version2 和 version3的原因，scanpy读取gz文件可能会出错，因此后面的做法是统一解压，命名为
-barcodes.tsv， genes.tsv, matrix.mtx文件.
-genes.tsv 需要两列，最好以tab分割
 ADT, Antibody-derived tag sequencing
-GDO, guide-derived oligonucleotide 在eccite_seq 中相当于 cell barcode
+GDO, guide-derived oligonucleotide
 
 Multiplexed CRISPR technologies, in which numerous gRNAs or Cas enzymes are expressed at once, 
 have facilitated powerful biological engineering applications
@@ -40,10 +35,9 @@ have facilitated powerful biological engineering applications
 
 '''
 Multiplexed Engineering and Analysis of Combinatorial Enhancer Activity in Single Cells
-由7个系列组成，大部分是pilot实验  bulkRNA，只有 GSE81750 和 GSE96827 能用
 '''
 
-### 第一个数据集
+### first dataset
 def PRJNA322853_1():
     def PRJNA322853_fun(GSM, MOI, batch):
         def PRJNA322853_funfun(sgRNA):
@@ -52,7 +46,7 @@ def PRJNA322853_1():
                 sgRNAs = sgRNA.split(',')
                 return ','.join(sgRNA2gene[tmp] for tmp in sgRNAs)          
 
-        def PRJNA322853_funfun1(sgRNA, read):  #### 保留reads数量大于5的扰动
+        def PRJNA322853_funfun1(sgRNA, read):  #### minReads = 5
             sgRNAs = sgRNA.split(',')
             reads = read.split(',')
             tmp = [int(i) >=5 for i in reads]
@@ -85,7 +79,7 @@ def PRJNA322853_1():
 
         adata.obs['sgRNA'] = [cell2sgRNA[cell] for cell in adata.obs_names]
         adata.obs['gene'] = adata.obs['sgRNA'].apply(PRJNA322853_funfun)
-        adata.obs['gene'] = adata.obs['gene'].apply(preGene)  #### 去除多个contrl的情况，比如CTRL,CTRL
+        adata.obs['gene'] = adata.obs['gene'].apply(preGene)  #### delete  CTRL,CTRL
         adata.obs['MOI'] = MOI; adata.obs['batch'] = batch
         adata.var_names_make_unique()
         return adata
@@ -98,7 +92,7 @@ def PRJNA322853_1():
     adata = ad.concat(mylist)
     fun1(adata)
 
-### 第二个数据集
+### second dataset
 def PRJNA322853_2():
     def PRJNA322853_fun(counts_file, sgRNABarcode_file):
         def PRJNA322853_funfun(sgRNA):
@@ -107,7 +101,7 @@ def PRJNA322853_2():
                 sgRNAs = sgRNA.split(',')
                 return ','.join(sgRNA2gene[tmp] for tmp in sgRNAs)    
 
-        def PRJNA322853_funfun1(sgRNA, read):  #### 保留reads数量大于5的扰动
+        def PRJNA322853_funfun1(sgRNA, read):  #### minReads = 5
             sgRNAs = sgRNA.split(',')
             reads = read.split(',')
             tmp = [int(i) >=5 for i in reads]
@@ -138,7 +132,7 @@ def PRJNA322853_2():
 
         adata.obs['sgRNA'] = [cell2sgRNA[cell] for cell in adata.obs_names]
         adata.obs['gene'] = adata.obs['sgRNA'].apply(PRJNA322853_funfun)
-        adata.obs['gene'] = adata.obs['gene'].apply(preGene)  #### 去除多个contrl的情况，比如CTRL,CTRL
+        adata.obs['gene'] = adata.obs['gene'].apply(preGene)  #### delete  CTRL,CTRL
         adata.obs['set'] = counts_file.split('_')[5]; adata.obs['batch'] = counts_file.split('_')[-1][0]
         adata.var_names_make_unique()
         return adata
@@ -152,10 +146,6 @@ def PRJNA322853_2():
 
 '''
 Global Analysis of Enhancer Targets Reveals Convergent Enhancer-Driven Regulatory Modules
-导入增强子的sgRNA信息，来鉴定增强子的靶基因。
-sgRNA-enrichment为sgRNA在每个细胞UMI的信息，根据这个得到每个细胞中导入的sgRNA，mm3有每个细胞导入的sgRNA个数的平局值
-信息，MOI越高，平均导入的越多。后续需要看文章，确定如何根据sgRNA信息得到每个细胞导入的sgRNA。
-mm2 是sgRNA对应的位置信息，
 '''
 def PRJNA532921():
     def PRJNA532921_fun(h5_file, sgRNA_file):
@@ -164,7 +154,7 @@ def PRJNA532921():
             tmp = [sgRNA2gene.get(i, 'None') for i in xs]
             return ';'.join(tmp)
         
-        def PRJNA532921_funfun1(x):   #### 把None赋值为CTRL
+        def PRJNA532921_funfun1(x):
             if x == 'None': return 'CTRL'
             xs = x.split(';')
             if np.all(np.array(xs) == 'None'): return 'CTRL'
@@ -180,7 +170,7 @@ def PRJNA532921():
             UMIs, Counts = x[3].split(';'), x[4].split(';')
             UMIs = np.array(UMIs)
             Counts = np.array([int(i) for i in Counts])
-            UMIs = UMIs[Counts >= 5]   ### 选取阈值
+            UMIs = UMIs[Counts >= 5]   ### minReads = 5
             tmp.append(';'.join(UMIs))
         dat[3] = tmp
         cell2sgRNA = dat[[0, 3]].set_index(0).to_dict()[3]
