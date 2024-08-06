@@ -19,7 +19,7 @@ def cal_result(dirName):
     adata1 = sc.read_h5ad('mixscape_filter.h5ad')
     adata1.uns['log1p']["base"] = None
     sc.pp.highly_variable_genes(adata1, n_top_genes=10000)
-    all_hvgs = adata1[:, adata1.var['highly_variable']].var_names  ### 直接保留的基因
+    all_hvgs = adata1[:, adata1.var['highly_variable']].var_names
 
     perts = adata1.obs['gene'].unique()
     perts = [i for i in perts if i !='CTRL']
@@ -41,7 +41,7 @@ def cal_result(dirName):
                 fout.write('{}\t{}\t{}\t{:.3f}\n'.format(pert, len(tmp), 0, 0))
 
 
-### 分析数据
+### analyze data
 def analysis1():
     mylist = []
     dat1 = pd.read_excel('/home/wzt/project/HC-CrisprScreen/poolSC_data/Sheet10_modif.xlsx')
