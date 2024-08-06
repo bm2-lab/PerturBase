@@ -90,7 +90,6 @@ def PRJNA663571(dirName):
     adata.var_names_make_unique()
     return adata
 
-###  预处理文件。
 # def f_PRJNA663571():
 #     dirNames = ['sample' + str(i) for i in range(1, 19)]
 #     dirNames = [os.path.join(basepath + '/PRJNA663571/', dirName) for dirName in dirNames]
