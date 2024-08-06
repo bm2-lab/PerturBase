@@ -57,8 +57,7 @@ def PRJNA556195():
 Multiplexed detection of proteins, transcriptomes, clonotypes and CRISPR perturbations in single cells
 '''
 
-### 第二篇数据
-def PRJNA521522():   ### 把protein 和 RNA数据取 使用mudata函数弄成多模态数据
+def PRJNA521522(): 
     os.chdir('/NFS_home/NFS_home_2/wzt/project/HC-CrisprScreen/poolSC_data/8ECCITE-seq/PRJNA521522/K')
     RNA= pd.read_csv('GSM3596090_K-cDNA.txt', sep=' ', index_col=0)
     protein = pd.read_csv('GSM3596091_K-ADT-count.csv', sep=',', index_col=0)
@@ -85,9 +84,6 @@ def PRJNA521522():   ### 把protein 和 RNA数据取 使用mudata函数弄成多
     mdata.write("mudata.h5mu")
 
 
-'''
-第三篇 
-'''
 def PRJNA641353():
     import pertpy as pt #type: ignore
     os.chdir('/home/wzt/project/HC-CrisprScreen/poolSC_data/8ECCITE-seq/PRJNA641353/ECCITE')
