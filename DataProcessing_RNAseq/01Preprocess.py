@@ -90,7 +90,6 @@ def PRJNA663571(dirName):
     adata.var_names_make_unique()
     return adata
 
-###  预处理文件。
 # def f_PRJNA663571():
 #     dirNames = ['sample' + str(i) for i in range(1, 19)]
 #     dirNames = [os.path.join(basepath + '/PRJNA663571/', dirName) for dirName in dirNames]
@@ -233,7 +232,7 @@ def PRJNA494734(dirName, prefix):
     metaData.columns = ['cell', 'sgRNA']
     metaData = metaData[~metaData['sgRNA'].isna()]
     metaData['gene'] = metaData['sgRNA'].apply(lambda x: fun(x))
-    metaData['gene'] = metaData['gene'].apply(preGene)  ###
+    metaData['gene'] = metaData['gene'].apply(preGene)
     metaData.set_index('cell', inplace=True)
     df, adata_obs = metaData.align(adata.obs, join="inner", axis=0)
     adata = adata[adata_obs.index, :]
@@ -433,7 +432,6 @@ def f_PRJNA715235():
 
 
 ### scPerturb
-
 '''
 Highly multiplexed single-cell RNA-seq by DNA oligonucleotide tagging of cellular proteins
 '''
