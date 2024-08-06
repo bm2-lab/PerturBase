@@ -163,7 +163,7 @@ def PRJNA478043():
     gbc = pd.read_csv('GSE116285_GBC_counts_GM12878_experiment2.txt', sep='\t', index_col=0)
     gbc.index = ['-'.join(i.split('-')[:5]) for i in gbc.index]
     gbc.columns = ['CTRL' if i in ('NT1', 'NT2') else i for i in gbc.columns]
-    myrows, mycols = np.where(gbc >= 1000)  ###大于1000，则赋值，沿用文献原文的方法。
+    myrows, mycols = np.where(gbc >= 1000)  ## methods applied in Coupled Single-Cell CRISPR Screening and Epigenomic Profiling Reveals Causal Gene Regulatory Networks
     mydict = defaultdict(set); mydict1 = defaultdict()
     for i, j in zip(myrows, mycols):
         cell = gbc.index[i]; gene = gbc.columns[j]
