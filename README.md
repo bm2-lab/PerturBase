@@ -13,7 +13,7 @@ This folder [DataProcessing_RNAseq](DataProcessing_RNAseq) contains the code for
 This folder [DataProcessing_ATACseq](DataProcessing_ATACseq) contains the code for preprocessing and denoising the raw ATAC data including Fragment tsv file and Peak Count matrix h5ad file.
 
 ### E-distance
-This folder [E-distance](E-distance) contains the code for calculating the distance between the perturb group and control (non-perturbed group)
+This folder [E-distance](E-distance) contains the code for calculating the distance between the perturb group and control group.
 
 ### Enrichment
 This folder [Enrichment](Enrichment) contains the code for GO and KEGG enrichment and visualization.
