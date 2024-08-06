@@ -27,15 +27,7 @@ def fun1(adata, isWrite = True, fileName = 'raw.h5ad'):
 ## Direct-capture perturbseq
 '''
 Combinatorial single-cell CRISPR screens by direct guide RNA capture and targeted sequencing
-Direct-capture perturbseq, 主要优化了perturbseq技术，并做了一系列的探讨
-exp1-5 探讨了敲除一些基因，对UPR通路的一些影响，其中使用了五种技术建库，并讨论了基因互作的一些分析。
-exp6  Cholesterol/DNA repair;
-exp7, exp8: CRISPRi 和 CRISPRa，
-
-multiplexing，即在设计sgRNA的时候，同一个质粒载体，对一个基因
-同时设计多个sgRNA提高编辑的效率。在cell_identities文件中，把 sgRNA + sgRNA和 sgRNA + control，即non_targeting，进行对比。 
-exp9, exp10 对需要测序的基因先进行富集，比如只测定LINCS 978个基因，增加了对这些基因的检测性能。后续的分析方法是否不同
-
+Direct-capture perturbseq
 '''
 def PRJNA609688():
     os.chdir('/home/wzt/project/HC-CrisprScreen/poolSC_data/9Perturb-seq/PRJNA609688/exp1-5')
@@ -90,7 +82,6 @@ def PRJNA609688():
 #### CROP-seq
 '''
 Pooled CRISPR screening with single-cell transcriptome readout
-直接使用段斌处理好的数据
 '''
 
 def PRJNA358686():
@@ -120,7 +111,6 @@ def PRJNA358686():
 
 ## improved crop-seq
 '''
-直接使用段斌处理好的数据
 '''
 def PRJNA428344():
     def myfun2(x):
@@ -162,7 +152,7 @@ def PRJNA428344():
 Coupled Single-Cell CRISPR Screening and Epigenomic Profiling Reveals Causal Gene Regulatory Networks
 
 '''
-### 第一个数据集
+### first dataset
 def PRJNA478043():
     os.chdir('/home/wzt/project/HC-CrisprScreen/poolSC_data/7Perturb-ATAC/PRJNA478043/BCell')
     peak = pd.read_csv('GSE116249_Peak_counts_GM12878_experiment2.txt', sep='\t')
@@ -187,7 +177,7 @@ def PRJNA478043():
     adata.obs['sgRNA'] = adata.obs['gene']
     fun1(adata)
 
-#### 第二个数据集
+#### second dataset
     os.chdir('/NFS_home/NFS_home_2/wzt/project/HC-CrisprScreen/poolSC_data/7Perturb-ATAC/PRJNA478043/Keratinocyte')
     peakKO = pd.read_csv('GSE116249_Peak_counts_Keratinocyte_KO.txt', sep='\t', index_col=0)
     peakWT = pd.read_csv('GSE116248_Peak_counts_Keratinocyte_WT.txt', sep='\t', index_col=0)
@@ -219,12 +209,7 @@ def PRJNA478043():
 
 ### SHARE-seq
 '''
-张峰实验室最近的文章, 一共15个数据集，其中
-GSE216595, GSE217066, GSE217215, GSE217460   有数据可以下载，但是不一定是扰动数据
-
-GSE216457, GSE216463, GSE216602, GSE216601
-GSE216477, GSE216479, GSE218506, GSE218562, GSE218789,
-GSE219000, GSE219058数据不符合要求
+GSE216595, GSE217066, GSE217215, GSE217460
 '''
 
 ###  180124_perturb
@@ -236,10 +221,8 @@ def PRJNA893678():
     fun1(adata)
 
 
-####  210715_combinatorial 数据集
+####  210715_combinatorial dataset
 def PRJNA893678_2():
-    ### c, 第二个数据集, 因为h5ad数据是矫正过后的数据，整理原始数据
-    ### 第一步，获取保留的cells
     os.chdir('/home/wzt/project/HC-CrisprScreen/poolSC_data/17SHARE-seq/PRJNA893678/GSE217066')
     def myfun1(filein, adata, fileout):
         tmp = pd.read_csv(filein, sep='\t', chunksize=1000, index_col=0, compression='gzip')
@@ -267,7 +250,7 @@ def PRJNA893678_2():
         else: 
             xs = [i for i in xs if i != 'GFP']
             return ','.join(sorted(xs))
-    ###第二步，整理成h5ad格式
+    ###convert to h5ad
     files = glob.glob('*subset_counts.tsv')
     dataList = []
     for file in files:
@@ -287,7 +270,6 @@ GSE217215
 '''
 def PRJNA893678_3():
     os.chdir('/home/wzt/project/HC-CrisprScreen/poolSC_data/17SHARE-seq/PRJNA893678/GSE217215')
-    #### 首先利用R包读取rds获取子集数据，要不然原始数据太大
     ### library('Matrix)
     ### dat = readRDS('GSE217215_201218_ATAC_subsample.rds')  
     ##  write.table(colnames(dat@assays$RNA@data), file = 'RNA_colnames.tsv', sep='\t', quote = F, row.names = F, col.names = F)
@@ -334,10 +316,10 @@ def PRJNA893678_4():
 
     adata.obs = adata.obs[['batch', 'gene']]
     genes = adata.obs['gene'].unique()
-    tmp = [adata[adata.obs['gene'] == i][:500] for i in genes]  ### 每个扰动最多保留500个细胞
+    tmp = [adata[adata.obs['gene'] == i][:500] for i in genes]  ### Max cell 500
     result = ad.concat(tmp)
 
-    tmp = result.obs['gene'].value_counts()   ###去除细胞数量太少的扰动
+    tmp = result.obs['gene'].value_counts()   ###   Min cell 100
     genes = list(tmp[tmp >= 100].index)  ###
     if 'CTRL' not in genes: genes += ['CTRL']
     result = result[result.obs['gene'].isin(genes), :]
@@ -347,7 +329,6 @@ def PRJNA893678_4():
 
 '''
 Ultra-high throughput single-cell RNA sequencing by combinatorial fluidic indexing
-优化了droplet的问题，本质上是array-based, 特点是对每个转录谱加上标记
 '''
 def PRJNA713314():
     os.chdir('/home/wzt/project/HC-CrisprScreen/poolSC_data/19scifi-RNA-seq')
@@ -365,13 +346,10 @@ def PRJNA713314():
 
 '''
 Efficient combinatorial targeting of RNA transcripts in single cells with Cas13 RNA Perturb-seq
-主要是优化了组合扰动
 GSE213957
 '''
 
 def PRJNA883380():
-    ### 数据集2
-    ### 先进行预处理 ADT文件
     # os.chdir('/home/wzt/project/HC-CrisprScreen/poolSC_data/20CaRPool-seq/PRJNA883380/THP1/ADT/')
     # names = ['1', '2', '3', '4']
     # for i in names:
@@ -434,17 +412,16 @@ def PRJNA883380():
     adata2.obs['gene'] = adata2.obs['gene1'].apply(myfun2)
     adata2.obs = adata2.obs[['GenePair', 'Phase', 'gene']]
 
-    mdata = MuData({'RNA': adata2, 'protein': adata1})  ### 多模态数据
+    mdata = MuData({'RNA': adata2, 'protein': adata1})  ### multi modal dataset
     mdata.write("mudata.h5mu")
 
     fun1(adata2)
 
 
 '''
-TAP-seq  只测序一部分基因
+TAP-seq 
 '''
 
-### 第一批数据集，扰动的是基因，
 def PRJNA559094_1():
     def PRJNA559094_fun(dirName):
         os.chdir(dirName)
@@ -463,7 +440,7 @@ def PRJNA559094_1():
             dat1 = dat1.T; dat2 = dat2.T
             adata = ad.AnnData(X=sparse.csr_matrix(dat1.values), obs=pd.DataFrame(index=dat1.index), var=pd.DataFrame(index=dat1.columns))
 
-            myrows, mycols = np.where(dat2 == 1)  ## 对细胞的扰动标签进行分配
+            myrows, mycols = np.where(dat2 == 1)  ### assign perturbation
             mydict = defaultdict(set); mydict1 = defaultdict()
             for i, j in zip(myrows, mycols):
                 cell = dat2.index[i]; gene = dat2.columns[j]
@@ -490,7 +467,7 @@ def PRJNA559094_1():
     PRJNA559094_fun(dirName='/home/wzt/project/HC-CrisprScreen/poolSC_data/16TAP-seq/REDESIGN')
 
 
-### 第二批数据集，扰动的是enhancer，
+### second dataset，perturbation is enhancers
 def PRJNA559094_2():
     def PRJNA559094_fun2(dirName):
         os.chdir(dirName)
@@ -509,7 +486,7 @@ def PRJNA559094_2():
             dat1 = dat1.T; dat2 = dat2.T
             adata = ad.AnnData(X=sparse.csr_matrix(dat1.values), obs=pd.DataFrame(index=dat1.index), var=pd.DataFrame(index=dat1.columns))
 
-            myrows, mycols = np.where(dat2 == 1)  ## 对细胞的扰动标签进行分配
+            myrows, mycols = np.where(dat2 == 1)  ## assign  perturbation
             mydict = defaultdict(set); mydict1 = defaultdict()
             for i, j in zip(myrows, mycols):
                 cell = dat2.index[i]; gene = dat2.columns[j]
@@ -534,15 +511,6 @@ def PRJNA559094_2():
     PRJNA559094_fun2('/home/wzt/project/HC-CrisprScreen/poolSC_data/16TAP-seq/PRJNA559094/SCREEN_chr11')
 
 
-#### 处理全基因组数据 
-
-
-
-
-
-
-
-###
 if __name__ == '__main__':
     print ('hello, world')
     #PRJNA559094_1()
