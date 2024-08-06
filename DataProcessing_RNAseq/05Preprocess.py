@@ -189,11 +189,3 @@ def PRJNA532921():
     adata = ad.concat(mylist)
     os.chdir('K562-dCas9-KRAB_5K')
     fun1(adata)
-
-
-if __name__ == '__main__':
-    print ('hello, world')
-    #PRJNA322853_1()
-    #PRJNA322853_2()
-    PRJNA532921()
-    
