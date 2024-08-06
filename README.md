@@ -18,9 +18,6 @@ This folder [E-distance](E-distance) contains the code for calculating the dista
 ### Enrichment
 This folder [Enrichment](Enrichment) contains the code for GO and KEGG enrichment and visualization.
 
-### Plot
-This folder [Plot](Plot) contains the basic plot function.
-
 ### Reproduce
 This manuscript [reProduce_the_result_of_Mixscape.py](Reproduce/reProduce_the_result_of_Mixscape.py) is the code for reproducing the extended Data of Fig.9a of [Characterizing the molecular regulation of inhibitory immune checkpoints with multimodal single-cell screens](https://www.nature.com/articles/s41588-021-00778-2). And We use this manuscript [evaluate_the_impact_of_hvg.py](Reproduce/evaluate_the_impact_of_hvg.py) to evaluate the impact of the selection of hvg in data preprocessing on the perturbation-specific differentially expressed genes. 
 
