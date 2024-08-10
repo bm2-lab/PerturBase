@@ -16,7 +16,7 @@ We present a streamlined analysis workflow and provide demo data to help users b
 
 Due to the size exceeding GitHub's limitations, demo data is hosted at [Figshare](https://figshare.com/s/dddc4ddf91d0b100fd6c). To run through our standard preprocess workflow, please execute the following commands in the demo data. Specifically,
 
-For RNA-seq and ATAC-seq, please organise the files as:
+For RNA-seq and ATAC-seq, please organize the files as:
 
 ```bash
 Demo_data
