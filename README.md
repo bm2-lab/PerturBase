@@ -10,6 +10,8 @@ We present a streamlined analysis workflow and provide demo data to help users b
 
 **Please ensure this GitHub repository is fully cloned to your local server**
 
+`R_env.yaml`, `Python_env.yaml` are the `R_env` and `Python_env` packages used in the `pipeline_bash_files`. Please first install them in your environment.
+
 ### Demo Data
 
 Due to the size exceeding GitHub's limitations, demo data is hosted at [Figshare](https://figshare.com/s/dddc4ddf91d0b100fd6c). To run through our standard preprocess workflow, please execute the following commands in the demo data. Specifically,
@@ -28,11 +30,7 @@ Demo_data
     ├── cbc_perturbation_dict.tsv
 ```
 
-### Environment
-
-`R_env.yaml`, `Python_env.yaml` are the `R_env` and `Python_env` packages used in the `pipeline_bash_files`. Please install them in your environment.
-
-### MsigDB
+### MsigDB_signature
 
 Molecular signatures used in PerturBase
 
