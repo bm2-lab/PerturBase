@@ -12,19 +12,9 @@ We present a streamlined analysis workflow and provide demo data to help users b
 
 ### Demo Data
 
-Due to the size exceeding GitHub's limitations, demo data is hosted at [Figshare](https://figshare.com/s/dddc4ddf91d0b100fd6c). If you wish to replicate our results, please retain the raw data files. Specifically,
+Due to the size exceeding GitHub's limitations, demo data is hosted at [Figshare](https://figshare.com/s/dddc4ddf91d0b100fd6c). To run through our standard preprocess workflow, please execute the following commands in the demo data. Specifically,
 
-For RNA, retain:
-
-* raw.h5ad
-
-For ATAC, retain:
-
-* fragment.tsv.gz
-* fragment.tsv.gz.tbi
-* cbc_perturbation_dict.tsv
-
-Following the instructions, the "Demo_data" folder would look like:
+For RNA-seq and ATAC-seq, please organise the files as:
 
 ```bash
 Demo_data
@@ -36,7 +26,6 @@ Demo_data
     ├── fragment.tsv.gz
     ├── fragment.tsv.gz.tbi
     ├── cbc_perturbation_dict.tsv
-
 ```
 
 ### Environment
