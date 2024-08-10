@@ -36,7 +36,7 @@ Molecular signatures used in PerturBase
 
 ### pipeline_bash_files
 
-For ATAC-seq and RNA-seq single-cell perturbation datasets, please select the corresponding script, respectively. For instance, 
+For ATAC-seq and RNA-seq single-cell perturbation datasets, please execute the corresponding script. 
 
 For ATAC-seq fragment data set,
 
