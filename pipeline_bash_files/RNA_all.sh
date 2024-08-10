@@ -1,15 +1,15 @@
-# bash RNA_all.sh /home/sirm/graduation_design/pipeline_folder/Demo_data/RNA Hs 1>RNA_all.stdout 2>RNA_all.stderr 
+# bash RNA_all.sh /home/pipeline_folder/Demo_data/RNA Hs 1>RNA_all.stdout 2>RNA_all.stderr 
 set -e
 path=$1
 species=$2
 
 #### Change the Python and R environment to your own path
 #### Change the Script to your own path
-Python_env='/home/wzt/anaconda3/envs/pertpyV5'
-R_env='/home/wzt/.conda/envs/Rversion4.2'
-Script_base_path='/home/sirm/graduation_design/pipeline_folder'
-msigdb_Signature_path='/home/sirm/graduation_design/pipeline_folder/Signature'
-source  /home/sirm/software/miniconda3/etc/profile.d/conda.sh 
+Python_env='/home/anaconda3/envs/pertpyV5'
+R_env='/home/.conda/envs/Rversion4.2'
+Script_base_path='/home/pipeline_folder'
+msigdb_Signature_path='/home/pipeline_folder/Signature'
+source  /home/software/miniconda3/etc/profile.d/conda.sh
 
 
 conda activate $Python_env
