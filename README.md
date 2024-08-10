@@ -12,19 +12,19 @@ We present a streamlined analysis workflow and provide demo data to help users b
 
 ### Demo Data
 
-Due to the size exceeding GitHub's limitations, the data is hosted on [Figshare](https://figshare.com/s/dddc4ddf91d0b100fd6c). If you wish to replicate our process, please retain only the raw data files. Specifically,
+Due to the size exceeding GitHub's limitations, demo data is hosted at [Figshare](https://figshare.com/s/dddc4ddf91d0b100fd6c). If you wish to replicate our results, please retain the raw data files. Specifically,
 
-For RNA, keep:
+For RNA, retain:
 
 * raw.h5ad
 
-For ATAC, keep:
+For ATAC, retain:
 
 * fragment.tsv.gz
 * fragment.tsv.gz.tbi
 * cbc_perturbation_dict.tsv
 
-After following the instructions, the "Demo_data" folder would look like this:
+Following the instructions, the "Demo_data" folder would look like:
 
 ```bash
 Demo_data
@@ -41,16 +41,11 @@ Demo_data
 
 ### Environment
 
-Here are the `R_env` and `Python_env` environments used in the `pipeline_bash_files`. Please install them in your Anaconda.
+R_env.yaml, Python_env.yaml are the `R_env` and `Python_env` packages used in the `pipeline_bash_files`. Please install them in your environment.
 
 ### MsigDB
 
 Molecular Signatures Database used in PerturBase
-
-### scripts
-
-All the scripts used in the pipeline.
-
 
 ### pipeline_bash_files
 
@@ -65,19 +60,23 @@ bash ATAC_fragment_all.sh /path_to_your_file/Demo_data/ATAC Hs
 For our demo RNA data set, run:
 
 ```bash
-bash RNA_all.sh /home/sirm/graduation_design/pipeline_folder/Demo_data/RNA Hs
+bash RNA_all.sh  /path_to_your_file/Demo_data/RNA  Hs
 ```
 
 
 To enhance user experience, we reorganized the code by replacing the absolute paths from the development machine with user-definable paths. Before executing the script, please replace `Python_env`, `R_env`, `Script_base_path`, `msigdb_Signature_path`, etc., with the paths on your local machine, and source the `conda.sh` under your Anaconda installation.
 
-### Reproduce
+### scripts
+
+Scripts that is invoked by the main program, i.e, pipeline.
+
+### Reproducebility
 
 This manuscript [reProduce_the_result_of_Mixscape.py](Reproduce/reProduce_the_result_of_Mixscape.py) is the code for reproducing the extended Data of Fig.9a of [Characterizing the molecular regulation of inhibitory immune checkpoints with multimodal single-cell screens](https://www.nature.com/articles/s41588-021-00778-2). And We use this manuscript [evaluate_the_impact_of_hvg.py](Reproduce/evaluate_the_impact_of_hvg.py) to evaluate the impact of the selection of hvg in data preprocessing on the perturbation-specific differentially expressed genes.
 
 ### Bug Report
 
-We welcome you to ask questions in the [Issue](https://github.com/bm2-lab/PerturBase/issues).
+Any question is welcomed in the [issue](https://github.com/bm2-lab/PerturBase/issues).
 
 ## Citation
 
