@@ -4,15 +4,15 @@
 
 ### Description
 
-We present PerturBase—the most comprehensive database designed for the analysis and visualization of scPerturbation data (http://www.perturbase.cn/). PerturBase consolidates 122 datasets from 46 publicly accessible research studies, covering 115 single-modal and 7 multi-modal datasets that include 24254 genetic and 230 chemical perturbations from about 5 million cells.
+We present PerturBase—the most comprehensive database designed for the analysis and visualization of single-cell perturbation datasets (http://www.perturbase.cn/). PerturBase consolidates 122 datasets from 46 publicly accessible research studies, covering 115 single-modal and 7 multi-modal datasets that include 24254 genetic and 230 chemical perturbations from about 5 million cells.
 
-We present a streamlined analysis workflow and provide demo data to help users better understand our analysis methods and specific commands.
+We present a streamlined analysis workflow and provide demo data to help users better understand our analysis.
 
-**Please ensure this GitHub repository is fully cloned to your local machine.**
+**Please ensure this GitHub repository is fully cloned to your local server**
 
 ### Demo Data
 
-Due to the size exceeding GitHub's limitations, the data is hosted on [Figshare](https://figshare.com/s/dddc4ddf91d0b100fd6c). Note that both RNA.zip and ATAC.zip contain folders with the results of the complete analysis pipeline. If you wish to replicate our process, please retain only the raw data files. Specifically,
+Due to the size exceeding GitHub's limitations, the data is hosted on [Figshare](https://figshare.com/s/dddc4ddf91d0b100fd6c). If you wish to replicate our process, please retain only the raw data files. Specifically,
 
 For RNA, keep:
 
