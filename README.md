@@ -43,7 +43,7 @@ Demo_data
 
 Here are the `R_env` and `Python_env` environments used in the `pipeline_bash_files`. Please install them in your Anaconda.
 
-### Signature
+### MsigDB
 
 Molecular Signatures Database used in PerturBase
 
@@ -51,9 +51,6 @@ Molecular Signatures Database used in PerturBase
 
 All the scripts used in the pipeline.
 
-### executable
-
-Executable files used outside the two environments.
 
 ### pipeline_bash_files
 
