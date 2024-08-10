@@ -10,9 +10,6 @@ import pickle
 from tqdm import tqdm
 warnings.filterwarnings('ignore')
 
-### #### 
-
-
 def cal_result(dirName):
     os.chdir(dirName)
     if not os.path.isfile('mixscape_filter.h5ad'): return
@@ -58,7 +55,6 @@ def analysis1():
 
 
 
-#### 
 if __name__== '__main__':
     dat = pd.read_excel('Sheet10_modif.xlsx')
     dat = dat[((dat['QC'] == 'Pass') & (dat['Modality'] !='ATAC'))]
