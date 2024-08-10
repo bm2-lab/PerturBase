@@ -1,4 +1,4 @@
-# bash ATAC_fragment_all.sh /home/sirm/graduation_design/pipeline_folder/Demo_data/ATAC/fragment_file Hs 1>ATAC_fragment_all.stdout 2>ATAC_fragment_all.stderr 
+# bash ATAC_fragment_all.sh /home/pipeline_folder/Demo_data/ATAC/fragment_file Hs 1>ATAC_fragment_all.stdout 2>ATAC_fragment_all.stderr 
 set -e
 path=$1
 species=$2
@@ -8,10 +8,10 @@ species=$2
 
 
 
-Python_env='/home/wzt/anaconda3/envs/pertpyV5'
-R_env='/home/wzt/.conda/envs/Rversion4.2'
-Script_base_path='/home/sirm/graduation_design/pipeline_folder'
-source  /home/sirm/software/miniconda3/etc/profile.d/conda.sh 
+Python_env='/home/anaconda3/envs/pertpyV5'
+R_env='/home/.conda/envs/Rversion4.2'
+Script_base_path='/home/pipeline_folder'
+source  /home/miniconda3/etc/profile.d/conda.sh 
 
 # Signac preprocessing
 conda activate $R_env
