@@ -59,19 +59,7 @@ def doEdist(dirName):
             df1 = df1 / df1.max().max()
             df1.to_csv('corBetweenPerturb/corEdistance.tsv', sep='\t', header=True, index=True, index_label='')
         else:
-            df = pd.read_csv('corBetweenPerturb/corEdistance_sub.tsv', sep='\t', header=0, index_col=0)  
-        plt.rcParams.update({'font.size': 15})   
-        row_colors = ['r' if i in strong else 'g' for i in df.index]
-        g = sns.clustermap(df, robust=False, figsize=(15,15), row_colors = row_colors, cbar_kws={"ticks": [0, 0.5, 1]})  
-        
-        reordered_rows = g.dendrogram_row.reordered_ind
-        reordered_cols = g.dendrogram_col.reordered_ind
-        cor_dat2 = df.iloc[reordered_rows, reordered_cols]
-        cor_dat2.to_csv('corBetweenPerturb/corEdistance_order.tsv', sep='\t', header=True, index=True)
-        with open('corBetweenPerturb/corEdistance_row.linkage.pkl', 'wb') as fout:
-            pickle.dump(obj=g.dendrogram_row.linkage, file=fout)
-        with open('corBetweenPerturb/corEdistance_col.linkage.pkl', 'wb') as fout:
-            pickle.dump(obj=g.dendrogram_col.linkage, file=fout)    
+            df = pd.read_csv('corBetweenPerturb/corEdistance_sub.tsv', sep='\t', header=0, index_col=0)    
 
 def ClusterDistribution(filein, fileout):
     adata1 = sc.read_h5ad('mixscape_hvg.h5ad')
@@ -400,7 +388,7 @@ def getDEG():
     dat.to_csv('GSFA/deg_result.tsv', sep='\t', header=True, index=False)
 def filterDEG(dirName):
     os.chdir(dirName)
-    foldchange = 2; pvalue = 0.05; score_cut = 0.2
+    foldchange = 2; pvalue = 0.01; score_cut = 0.2
 
     ### wilcoxon   
     mydict = {}
@@ -448,7 +436,7 @@ def filterDEG(dirName):
 ### GSFA
     mydict = defaultdict(list)
     dat = pd.read_csv('GSFA/lfsr.tsv', sep='\t', index_col=0)
-    dat = dat.iloc[:, :-1]  ### 最后一列为offset
+    dat = dat.iloc[:, :-1]  ### offset
     for pertGene in dat.columns:
         tmp = dat[pertGene] <= pvalue
         deg = list(tmp[tmp].index)
