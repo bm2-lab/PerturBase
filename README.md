@@ -8,8 +8,7 @@ We present PerturBase—the most comprehensive database designed for the analysi
 
 We present a streamlined analysis workflow and provide demo data to help users better understand our analysis.
 
-**Please ensure this GitHub repository is fully cloned to your local server**
-
+### Requirements
 `R_env.yaml`, `Python_env.yaml` are the `R_env` and `Python_env` packages used in the `pipeline_bash_files`. Please first install them in your environment.
 
 ### Demo Data
