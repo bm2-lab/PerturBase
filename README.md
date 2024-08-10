@@ -41,7 +41,7 @@ Demo_data
 
 ### Environment
 
-R_env.yaml, Python_env.yaml are the `R_env` and `Python_env` packages used in the `pipeline_bash_files`. Please install them in your environment.
+`R_env.yaml`, `Python_env.yaml` are the `R_env` and `Python_env` packages used in the `pipeline_bash_files`. Please install them in your environment.
 
 ### MsigDB
 
