@@ -14,8 +14,7 @@ matplotlib.rcParams['ps.fonttype'] = 42
 plt.rc('font',family='Times New Roman')
 plt.rcParams.update({'font.size': 10})
 
-#dirName = '/home/wzt/project/HC-CrisprScreen/poolSC_data/8ECCITE-seq/PRJNA641353/ECCITE'
-#os.chdir(dirName)
+os.chdir(dirName)
 
 dat = sc.read_h5ad('mixscape_hvg.h5ad')
 
