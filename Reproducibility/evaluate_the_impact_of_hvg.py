@@ -44,7 +44,7 @@ def cal_result(dirName):
 ### analyze data
 def analysis1():
     mylist = []
-    dat1 = pd.read_excel('/home/wzt/project/HC-CrisprScreen/poolSC_data/Sheet10_modif.xlsx')
+    dat1 = pd.read_excel('Sheet10_modif.xlsx')
     dat1 = dat1[((dat1['QC'] == 'Pass') & (dat1['Modality'] !='ATAC'))]
     dat1.sort_values('Filter_PerturbationNums', ascending=True, inplace=True)
     for dirName in tqdm(dat1['Datapath']):
@@ -60,7 +60,7 @@ def analysis1():
 
 #### 
 if __name__== '__main__':
-    dat = pd.read_excel('/home/wzt/project/HC-CrisprScreen/poolSC_data/Sheet10_modif.xlsx')
+    dat = pd.read_excel('Sheet10_modif.xlsx')
     dat = dat[((dat['QC'] == 'Pass') & (dat['Modality'] !='ATAC'))]
     dat.sort_values('Filter_PerturbationNums', ascending=True, inplace=True)
     for dirName in tqdm(dat['Datapath']):
