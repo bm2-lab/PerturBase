@@ -42,16 +42,6 @@ def calDistance(dirName):
     dat.to_csv('perturbationClass.tsv', sep='\t', index=False)
 
 
-# def f_calDistance():
-#     dat = pd.read_csv('/home/wzt/project/HC-CrisprScreen/results/dataInfo.tsv', sep='\t', header=0)
-#     for dirName, species in zip(dat["data"], dat["species"]):
-#         if dirNames and dirName  not in  dirNames: continue   
-#         try:
-#             calDistance(dirName)
-#         except Exception as e:
-#             print (e); print (dirName)
-
-
 def pertCountPerClass(dirName):
     os.chdir(dirName)
     print (dirName)
@@ -62,13 +52,6 @@ def pertCountPerClass(dirName):
     count2 = pd.crosstab(index=adata2.obs["leiden"], columns=adata2.obs["gene"])
     count1.to_csv('clusterDistribution_beforeMix.tsv', sep='\t', index=True)
     count2.to_csv('clusterDistribution_afterMix.tsv', sep='\t', index=True)
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
