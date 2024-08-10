@@ -45,26 +45,25 @@ Demo_data
 
 ### MsigDB
 
-Molecular Signatures Database used in PerturBase
+Molecular signatures used in PerturBase
 
 ### pipeline_bash_files
 
-This is whole pipeline script. For each data set, select the corresponding script, input the data path and species, and complete the entire analysis.
+For ATAC-seq and RNA-seq single-cell perturbation datasets, please select the corresponding script, respectively. For instance, 
 
-For our demo ATAC fragment data set, run:
+For ATAC-seq fragment data set,
 
 ```bash
 bash ATAC_fragment_all.sh /path_to_your_file/Demo_data/ATAC Hs
 ```
 
-For our demo RNA data set, run:
+For RNA-seq data set, 
 
 ```bash
 bash RNA_all.sh  /path_to_your_file/Demo_data/RNA  Hs
 ```
 
-
-To enhance user experience, we reorganized the code by replacing the absolute paths from the development machine with user-definable paths. Before executing the script, please replace `Python_env`, `R_env`, `Script_base_path`, `msigdb_Signature_path`, etc., with the paths on your local machine, and source the `conda.sh` under your Anaconda installation.
+Before executing the script, please replace `Python_env`, `R_env`, `Script_base_path`, `msigdb_Signature_path`, etc., with the paths on your local machine, and source the `conda.sh` under your Anaconda installation.
 
 ### scripts
 
