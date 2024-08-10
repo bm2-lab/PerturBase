@@ -29,13 +29,7 @@ Demo_data
     ├── cbc_perturbation_dict.tsv
 ```
 
-### MsigDB_signature
-
-Molecular signatures used in PerturBase
-
 ### pipeline_bash_files
-
-For ATAC-seq and RNA-seq single-cell perturbation datasets, please execute the corresponding script. 
 
 For ATAC-seq fragment data set,
 
@@ -54,6 +48,10 @@ Before executing the script, please replace `Python_env`, `R_env`, `Script_base_
 ### scripts
 
 Scripts that is invoked by the main program, i.e, pipeline_bash_files.
+
+### MsigDB_signature
+
+Molecular signatures used in PerturBase
 
 ### Reproducibility
 
