@@ -8,7 +8,7 @@ We present PerturBase—the most comprehensive database designed for the analysi
 
 We present a streamlined analysis workflow and provide demo data to help users better understand our analysis methods and specific commands.
 
-**Please ensure that this GitHub repository is fully cloned to your local machine.**
+**Please ensure this GitHub repository is fully cloned to your local machine.**
 
 ### Demo Data
 
