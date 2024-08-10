@@ -6,10 +6,10 @@ species=$2
 #### Change the Python and R environment to your own path
 #### Change the Script to your own path
 
-Python_env='/home/wzt/anaconda3/envs/pertpyV5'
-R_env='/home/wzt/.conda/envs/Rversion4.2'
-Script_base_path='/home/sirm/graduation_design/pipeline_folder'
-source  /home/sirm/software/miniconda3/etc/profile.d/conda.sh 
+Python_env='/home/anaconda3/envs/pertpyV5'
+R_env='/home/.conda/envs/Rversion4.2'
+Script_base_path='/home/pipeline_folder'
+source  /home/software/miniconda3/etc/profile.d/conda.sh 
 
 # Signac preprocessing
 conda activate $R_env
