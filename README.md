@@ -1,7 +1,5 @@
 ## PerturBase
 
----
-
 ### Description
 
 We present PerturBase—the most comprehensive database designed for the analysis and visualization of single-cell perturbation datasets (http://www.perturbase.cn/). PerturBase consolidates 122 datasets from 46 publicly accessible research studies, covering 115 single-modal and 7 multi-modal datasets that include 24254 genetic and 230 chemical perturbations from about 5 million cells.
