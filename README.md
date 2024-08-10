@@ -75,7 +75,7 @@ This manuscript [reproduce_the_result_of_mixscape.py](Reproducibility/reproduce_
 
 ### Bug Report
 
-Any question is welcomed in the [issue](https://github.com/bm2-lab/PerturBase/issues).
+Any question is welcome in the [issue](https://github.com/bm2-lab/PerturBase/issues).
 
 ## Citation
 
