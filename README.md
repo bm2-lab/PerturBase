@@ -68,11 +68,11 @@ To enhance user experience, we reorganized the code by replacing the absolute pa
 
 ### scripts
 
-Scripts that is invoked by the main program, i.e, pipeline.
+Scripts that is invoked by the main program, i.e, pipeline_bash_files.
 
-### Reproducebility
+### Reproducibility
 
-This manuscript [reProduce_the_result_of_Mixscape.py](Reproduce/reProduce_the_result_of_Mixscape.py) is the code for reproducing the extended Data of Fig.9a of [Characterizing the molecular regulation of inhibitory immune checkpoints with multimodal single-cell screens](https://www.nature.com/articles/s41588-021-00778-2). And We use this manuscript [evaluate_the_impact_of_hvg.py](Reproduce/evaluate_the_impact_of_hvg.py) to evaluate the impact of the selection of hvg in data preprocessing on the perturbation-specific differentially expressed genes.
+This manuscript [reproduce_the_result_of_mixscape.py](Reproducibility/reproduce_the_result_of_mixscape.py) is the code for reproducing the extended Data of Fig.9a of [Characterizing the molecular regulation of inhibitory immune checkpoints with multimodal single-cell screens](https://www.nature.com/articles/s41588-021-00778-2). And We use the manuscript [evaluate_the_impact_of_hvg.py](Reproducibility/evaluate_the_impact_of_hvg.py) to evaluate the impact of the selection of hvg in data preprocessing on the perturbation-specific differentially expressed genes.
 
 ### Bug Report
 
