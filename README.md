@@ -13,7 +13,7 @@ We present PerturBase—the most comprehensive database designed for the analysi
 
 ### Demo Data
 
-Due to the size exceeding GitHub's limitations, demo data is hosted at [Figshare](https://figshare.com/s/dddc4ddf91d0b100fd6c). To run through our standard preprocess workflow, please execute the following commands in the demo data.
+Due to the size exceeding GitHub's limitations, demo data is hosted at [Figshare](https://figshare.com/s/dddc4ddf91d0b100fd6c). To run through our standard preprocess workflow, please execute the following commands with the demo data.
 
 Specifically, for RNA-seq and ATAC-seq, please organize the files as follows,
 
