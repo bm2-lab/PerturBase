@@ -55,7 +55,7 @@ Molecular signatures used in PerturBase
 
 ### Reproducibility
 
-This manuscript [reproduce_the_result_of_mixscape.py](Reproducibility/reproduce_the_result_of_mixscape.py) is the code for reproducing the extended Data of Fig.9a of [Characterizing the molecular regulation of inhibitory immune checkpoints with multimodal single-cell screens](https://www.nature.com/articles/s41588-021-00778-2). And We use the manuscript [evaluate_the_impact_of_hvg.py](Reproducibility/evaluate_the_impact_of_hvg.py) to evaluate the impact of the selection of hvg in data preprocessing on the perturbation-specific differentially expressed genes.
+This manuscript [reproduce_the_result_of_mixscape.py](Reproducibility/reproduce_the_result_of_mixscape.py) is the code for reproducing the extended Data of Fig.9a of [Characterizing the molecular regulation of inhibitory immune checkpoints with multimodal single-cell screens](https://www.nature.com/articles/s41588-021-00778-2). We use the manuscript [evaluate_the_impact_of_hvg.py](Reproducibility/evaluate_the_impact_of_hvg.py) to evaluate the impact of the selection of hvg in data preprocessing on the perturbation-specific differentially expressed genes.
 
 ### Bug Report
 
