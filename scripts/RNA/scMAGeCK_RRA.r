@@ -25,11 +25,11 @@ adata <- ScaleData(data, do.center = F, do.scale = F)
 
 bc_dox = read.table("barcode.txt", header = TRUE, as.is = TRUE, sep='\t')
 
-RRAPATH = paste0(Script_base_path,'/executable/RRA')
+RRAPATH = paste0(Script_base_path,'/RRA')
 if (species == 'hsa'){
-    SIGNATURE = paste0(msigdb_Signature_path,'/hsa/h.all.v2023.2.Hs.symbols.gmt')
+    SIGNATURE = paste0(msigdb_Signature_path,'/h.all.v2023.2.Hs.symbols.gmt')
     scmageck_rra(BARCODE='barcode.txt', RDS=adata, RRAPATH = RRAPATH ,SIGNATURE = SIGNATURE,  NEGCTRL="CTRL", KEEPTMP = FALSE, SAVEPATH = './scMageCK/')
 } else{
-    SIGNATURE = paste0(msigdb_Signature_path,'/mmu/mh.all.v2023.2.Mm.symbols.gmt')
+    SIGNATURE = paste0(msigdb_Signature_path,'/mh.all.v2023.2.Mm.symbols.gmt')
     scmageck_rra(BARCODE='barcode.txt', RDS=adata, RRAPATH = RRAPATH , SIGNATURE = SIGNATURE,  NEGCTRL="CTRL", KEEPTMP = FALSE, SAVEPATH = './scMageCK/')
 }

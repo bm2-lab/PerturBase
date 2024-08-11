@@ -6,9 +6,8 @@ We present PerturBase—the most comprehensive database designed for the analysi
 
 **To demonstrate the readability, reusability, and reproducibility of our single-cell perturbation data preprocess and analysis workflow, we provided a demo case.**
 
-
-
 ### Requirements
+
 `R_env.yaml`, `Python_env.yaml` are the `R_env` and `Python_env` packages used in the `pipeline_bash_files`. Please first install them in your environment.
 
 ### Demo Data
@@ -31,19 +30,21 @@ Demo_data
 
 ### pipeline_bash_files
 
+Here is where we store the code for processing workflows of different types of raw data. You can use this code to replicate our results. Especially for our demo data:
+
 For ATAC-seq fragment data set,
 
 ```bash
 bash ATAC_fragment_all.sh /path_to_your_file/Demo_data/ATAC Hs
 ```
 
-For RNA-seq data set, 
+For RNA-seq data set,
 
 ```bash
 bash RNA_all.sh  /path_to_your_file/Demo_data/RNA  Hs
 ```
 
-Before executing the script, please replace `Python_env`, `R_env`, `Script_base_path`, `msigdb_Signature_path`, etc., with the paths on your local machine, and source the `conda.sh` under your Anaconda installation.
+Before executing the script, please replace `Python_env`, `R_env`, `Script_base_path`, `msigdb_Signature_path`, etc., with the paths on your local machine.
 
 ### scripts
 

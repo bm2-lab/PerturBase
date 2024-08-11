@@ -5,18 +5,24 @@ species=$2
 
 #### Change the Python and R environment to your own path
 #### Change the Script to your own path
-Python_env='/home/anaconda3/envs/pertpyV5'
-R_env='/home/.conda/envs/Rversion4.2'
-Script_base_path='/home/pipeline_folder'
-msigdb_Signature_path='/home/pipeline_folder/Signature'
-source  /home/software/miniconda3/etc/profile.d/conda.sh
+#### Demo:
+# Python_env='/home/anaconda3/envs/pertpyV5'
+# R_env='/home/.conda/envs/Rversion4.2'
+# Script_base_path='/home/pipeline_folder'
+# msigdb_Signature_path='/home/sirm/graduation_design/Github_source_code/PerturBase/MsigDB_signature'
+# source  /home/software/miniconda3/etc/profile.d/conda.sh
+Python_env='/path/to/your/Python_env'
+R_env='/path/to/your/R_env'
+Script_base_path='/path/to/your/pipeline_folder'
+msigdb_Signature_path='/path/to/your/MsigDB_signature'
+source /path/to/your/miniconda3/etc/profile.d/conda.sh
 
 
 conda activate $Python_env
 # denoising
 python -u ${Script_base_path}/scripts/RNA/denoising.py $path $species
 # NP SP ratio and mixscape
-python -u ${Script_base_path}/scripts/RNA/MixScape1.py $path $species
+python -u ${Script_base_path}/scripts/RNA/MixScape.py $path $species
 # analysis 
 python -u ${Script_base_path}/scripts/RNA/analysis.py $path $species $R_env $Script_base_path $Python_env $msigdb_Signature_path
 # Enrichment and plot

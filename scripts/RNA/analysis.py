@@ -163,9 +163,9 @@ def runMagecK_rra(species,R_env,Script_base_path,Python_env,msigdb_Signature_pat
         myUtil_r = f'{Script_base_path}/scripts/RNA/myUtil.r'
 
         if species == 'Homo sapiens':
-            cmd = '{}/bin/Rscript   {}/scripts/RNA/doScMAGeCK2.r    hsa {} {} {} {}'.format(R_env,Script_base_path,path_to_python,myUtil_r,msigdb_Signature_path,Script_base_path)
+            cmd = '{}/bin/Rscript   {}/scripts/RNA/scMAGeCK_RRA.r    hsa {} {} {} {}'.format(R_env,Script_base_path,path_to_python,myUtil_r,msigdb_Signature_path,Script_base_path)
         else:
-            cmd = '{}/bin/Rscript    {}/scripts/RNA/doScMAGeCK2.r    mmu {} {} {} {} '.format(R_env,Script_base_path,path_to_python,myUtil_r,msigdb_Signature_path,Script_base_path)
+            cmd = '{}/bin/Rscript    {}/scripts/RNA/scMAGeCK_RRA.r    mmu {} {} {} {} '.format(R_env,Script_base_path,path_to_python,myUtil_r,msigdb_Signature_path,Script_base_path)
         subprocess.call(cmd, shell=True)
         files = glob.glob('scMageCK/GENE_SET/hallmark*')
         hallmarkName = [os.path.basename(i)[:-8] for i in files]
@@ -195,9 +195,9 @@ def runMagecK_lr(species,R_env,Script_base_path,Python_env):
         path_to_python = f"{Python_env}/bin/python"
         myUtil_r = f'{Script_base_path}/scripts/RNA/myUtil.r'
         if species == 'Homo sapiens':
-            cmd = '{}/bin/Rscript   {}/scripts/RNA/doScMAGeCK3.r    hsa {} {}'.format(R_env,Script_base_path,path_to_python,myUtil_r)
+            cmd = '{}/bin/Rscript   {}/scripts/RNA/scMAGeCK_LR.r    hsa {} {}'.format(R_env,Script_base_path,path_to_python,myUtil_r)
         else:
-            cmd = '{}/bin/Rscript   {}/scripts/RNA/doScMAGeCK3.r    mmu {} {}'.format(R_env,Script_base_path,path_to_python,myUtil_r)
+            cmd = '{}/bin/Rscript   {}/scripts/RNA/scMAGeCK_LR.r    mmu {} {}'.format(R_env,Script_base_path,path_to_python,myUtil_r)
         subprocess.call(cmd, shell=True)
     except Exception as e:
         print(f"failed: {e}")
@@ -211,9 +211,9 @@ def runsceptre(species,R_env,Script_base_path,Python_env):
         path_to_python = f"{Python_env}/bin/python"
         myUtil_r = f'{Script_base_path}/scripts/RNA/myUtil.r'
         if species == 'Homo sapiens':
-            cmd = '{}/bin/Rscript   {}/scripts/RNA/doSceptre.r    hsa {} {} '.format(R_env,Script_base_path,path_to_python,myUtil_r)
+            cmd = '{}/bin/Rscript    {}/scripts/RNA/SCEPTRE.r    hsa {} {} '.format(R_env,Script_base_path,path_to_python,myUtil_r)
         else:
-            cmd = '{}/bin/Rscript    {}/scripts/RNA/doSceptre.r    mmu {} {}'.format(R_env,Script_base_path,path_to_python,myUtil_r)
+            cmd = '{}/bin/Rscript    {}/scripts/RNA/SCEPTRE.r    mmu {} {}'.format(R_env,Script_base_path,path_to_python,myUtil_r)
         subprocess.call(cmd, shell=True)
     except Exception as e:
         print(f"failed: {e}");
@@ -275,9 +275,9 @@ def runGSFA(species,R_env,Script_base_path,Python_env):
         path_to_python = f"{Python_env}/bin/python"
         myUtil_r = f'{Script_base_path}/scripts/RNA/myUtil.r'
         if species == 'Homo sapiens':
-            cmd = '{}/bin/Rscript   {}/scripts/RNA/doGSFA.r    hsa {} {} '.format(R_env,Script_base_path,path_to_python,myUtil_r)
+            cmd = '{}/bin/Rscript   {}/scripts/RNA/GSFA.r    hsa {} {} '.format(R_env,Script_base_path,path_to_python,myUtil_r)
         else:
-            cmd = '{}/bin/Rscript    {}/scripts/RNA/doGSFA.r    mmu {} {}'.format(R_env,Script_base_path,path_to_python,myUtil_r)
+            cmd = '{}/bin/Rscript    {}/scripts/RNA/GSFA.r    mmu {} {}'.format(R_env,Script_base_path,path_to_python,myUtil_r)
         subprocess.call(cmd, shell=True)
     except Exception as e:
         print(f"failed: {e}")
