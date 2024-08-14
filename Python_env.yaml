@@ -1,4 +1,4 @@
-name: /home/wzt/anaconda3/envs/pertpyV5
+name: /home/anaconda3/envs/pertpyV5
 channels:
   - conda-forge
   - defaults
@@ -217,4 +217,4 @@ dependencies:
       - xarray-einstats==0.6.0
       - yarl==1.9.2
       - zipp==3.16.2
-prefix: /home/wzt/anaconda3/envs/pertpyV5
+prefix: /home/anaconda3/envs/pertpyV5
