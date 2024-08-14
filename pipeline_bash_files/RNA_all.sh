@@ -9,7 +9,7 @@ species=$2
 # Python_env='/home/anaconda3/envs/pertpyV5'
 # R_env='/home/.conda/envs/Rversion4.2'
 # Script_base_path='/home/pipeline_folder'
-# msigdb_Signature_path='/home/sirm/graduation_design/Github_source_code/PerturBase/MsigDB_signature'
+# msigdb_Signature_path='/home/Github_source_code/PerturBase/MsigDB_signature'
 # source  /home/software/miniconda3/etc/profile.d/conda.sh
 Python_env='/path/to/your/Python_env'
 R_env='/path/to/your/R_env'
