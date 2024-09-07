@@ -22,7 +22,7 @@ conda activate $Python_env
 # denoising
 python -u ${Script_base_path}/scripts/RNA/denoising.py $path $species
 # NP SP ratio and mixscape
-python -u ${Script_base_path}/scripts/RNA/MixScape.py $path $species
+python -u ${Script_base_path}/scripts/RNA/Mixscape.py $path $species
 # analysis 
 python -u ${Script_base_path}/scripts/RNA/analysis.py $path $species $R_env $Script_base_path $Python_env $msigdb_Signature_path
 # Enrichment and plot
