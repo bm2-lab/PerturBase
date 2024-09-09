@@ -11,10 +11,12 @@ species=$2
 # Script_base_path='/home/pipeline_folder'
 # msigdb_Signature_path='/home/Github_source_code/PerturBase/MsigDB_signature'
 # source  /home/software/miniconda3/etc/profile.d/conda.sh
+# chmod 777 /home/Github_source_code/PerturBase/RRA # make it executable
 Python_env='/path/to/your/Python_env'
 R_env='/path/to/your/R_env'
 Script_base_path='/path/to/your/pipeline_folder'
 msigdb_Signature_path='/path/to/your/MsigDB_signature'
+chmod 777 /path/to/your/pipeline_folder/RRA 
 source /path/to/your/miniconda3/etc/profile.d/conda.sh
 
 
