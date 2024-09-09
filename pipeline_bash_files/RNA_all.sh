@@ -1,4 +1,4 @@
-# bash RNA_all.sh /home/pipeline_folder/Demo_data/RNA Hs 1>RNA_all.stdout 2>RNA_all.stderr 
+# bash RNA_all.sh /home/Github_source_code/PerturBase/Demo_data/RNA Hs 1>RNA_all.stdout 2>RNA_all.stderr 
 set -e
 path=$1
 species=$2
