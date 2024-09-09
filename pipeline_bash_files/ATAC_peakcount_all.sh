@@ -8,7 +8,7 @@ species=$2
 #### Demo:
 # Python_env='/home/anaconda3/envs/pertpyV5'
 # R_env='/home/.conda/envs/Rversion4.2'
-# Script_base_path='/home/pipeline_folder'
+# Script_base_path='/home/Github_source_code/PerturBase'
 # source  /home/software/miniconda3/etc/profile.d/conda.sh
 Python_env='/path/to/your/Python_env'
 R_env='/path/to/your/R_env'
