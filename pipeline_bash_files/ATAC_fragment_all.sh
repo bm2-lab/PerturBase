@@ -1,4 +1,4 @@
-# bash ATAC_fragment_all.sh /home/pipeline_folder/Demo_data/ATAC/fragment_file Hs 1>ATAC_fragment_all.stdout 2>ATAC_fragment_all.stderr 
+# bash ATAC_fragment_all.sh /home/Github_source_code/PerturBase/Demo_data/ATAC/fragment_file Hs 1>ATAC_fragment_all.stdout 2>ATAC_fragment_all.stderr 
 set -e
 path=$1
 species=$2
@@ -8,7 +8,7 @@ species=$2
 #### Demo:
 # Python_env='/home/anaconda3/envs/pertpyV5'
 # R_env='/home/.conda/envs/Rversion4.2'
-# Script_base_path='/home/pipeline_folder'
+# Script_base_path='/home/Github_source_code/PerturBase'
 # source  /home/software/miniconda3/etc/profile.d/conda.sh
 Python_env='/path/to/your/Python_env'
 R_env='/path/to/your/R_env'
