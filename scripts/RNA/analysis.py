@@ -585,3 +585,5 @@ if __name__ == '__main__':
     ### process deg file
     print('process deg file')
     getDEG()
+
+    filterDEG(path)
