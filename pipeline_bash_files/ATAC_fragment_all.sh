@@ -36,5 +36,3 @@ python -u ${Script_base_path}/scripts/ATAC/ATAC_Edist_ClusterDistr.py $path $spe
 # Enrichment and plot
 python -u ${Script_base_path}/scripts/ATAC/ATAC_Enrichment.py $path $species $R_env $Script_base_path
 python -u ${Script_base_path}/scripts/ATAC/ATAC_Enrichment_plot.py $path $species $R_env $Script_base_path
-
-

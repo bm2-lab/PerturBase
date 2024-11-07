@@ -1,4 +1,3 @@
-
 set -e
 path=$1
 species=$2

@@ -144,10 +144,13 @@ def preData(adata, filterNone=True, minNums = 30, shuffle=True, filterCom=False,
 def transID(adata, species):
     adata.var_names_make_unique()
     adata.obs_names_make_unique()
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     if species == 'Mus musculus':
-        dat = pd.read_csv('/home/wzt/database/ENSEMBL2SYMBOL_Mm.tsv', sep='\t')
+        data_file_path = os.path.join(current_dir, 'id_mapping', 'ENSEMBL2SYMBOL_Mm.tsv')
+        
     else:
-        dat = pd.read_csv('/home/wzt/database/ENSEMBL2SYMBOL_Hs.tsv', sep='\t')
+        data_file_path = os.path.join(current_dir, 'id_mapping', 'ENSEMBL2SYMBOL_Hs.tsv')
+    dat = pd.read_csv(data_file_path, sep='\t')
     if adata.var_names[0].startswith('ENS'):
         dat.set_index('ENSEMBL', inplace=True)
     else:

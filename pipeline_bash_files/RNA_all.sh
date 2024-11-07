@@ -30,4 +30,3 @@ python -u ${Script_base_path}/scripts/RNA/analysis.py $path $species $R_env $Scr
 # Enrichment and plot
 python -u ${Script_base_path}/scripts/RNA/RNA_Enrichment.py $path $species $R_env $Script_base_path
 python -u ${Script_base_path}/scripts/RNA/RNA_Enrichment_plot.py $path $species $R_env $Script_base_path
-

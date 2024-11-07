@@ -129,6 +129,7 @@ def ff_doMixScape(species='Homo sapiens', keepall=False):  #Mus musculus
 
 
 if __name__ == '__main__':
+    print(sys.argv)
     path = sys.argv[1]
     os.chdir(path)
     species = sys.argv[2]
